@@ -3,7 +3,9 @@ new Vue({
   data: {
     clsName: '',
     classes: '',
-    classToggle: ''
+    classToggle: '',
+    bgColor: 'green',
+    blockWidth: 0
   },
   methods: {
     startEffect: function() {
@@ -16,6 +18,15 @@ new Vue({
         flag = !flag;
 
       }, 3000);
+    },
+    startProgress: function() {
+      let self = this;
+
+      setInterval(function() {
+        self.blockWidth < 100 ? self.blockWidth += 5: '';
+
+      }, 1000);
+
     }
   }
 });
